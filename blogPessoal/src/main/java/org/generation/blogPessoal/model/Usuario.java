@@ -5,30 +5,29 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.sun.istack.NotNull;
-
 @Entity
-@Table(name = "tb_usuario")
+@Table(name = "usuarios")
 public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
-	@NotNull
-	@Size(min = 2, max = 100)
-	private String nome;
-
-	@NotNull
-	@Size(min = 2, max = 100)
-	private String usuario;
-
-	@NotNull
-	@Size(min = 2, max = 100)
-	private String senha;
-
 	private long id;
+	
+	@NotNull
+	@Size(min = 5, max = 100)
+	private String nome;
+	
+	@NotNull
+	@Size(min = 5, max = 100)
+	private String usuario;
+	
+	@NotNull
+	@Size(min = 5)
+	private String senha;
+	
 
 	public long getId() {
 		return id;
@@ -61,5 +60,5 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
+	
 }
