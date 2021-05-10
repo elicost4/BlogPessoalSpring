@@ -19,6 +19,14 @@ public class UsuarioService {
 	
 	public Optional<Usuario> CadastrarUsuario(Usuario usuario) {
 		
+		if (usuario.getIdade() >= 18) {
+			usuario.setMaiorIdade(true);
+		}
+		
+		else if (usuario.getIdade() < 18) {
+			usuario.setMaiorIdade(false);
+		}
+		
 		if(repository.findByUsuario(usuario.getUsuario()).isPresent())
 			return null;
 		
