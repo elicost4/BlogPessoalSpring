@@ -38,7 +38,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 		private Contact contact(){
 			return new Contact("Eliabe Costa",
 					"https://github.com/elicost4",
-					"Estudante de Java Web Full Stack");
+					"Developer Java Web Junior Full Stack");
 		}
 
 }
